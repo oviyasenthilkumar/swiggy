@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> Swiggy Webpage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <section id="Webpage-container" >
+        <header>
+            <div class="webContainer">
+                <div class="head-row">
+                    <div class="head-logo">
+                       
+                        <h1 id="logo"><img src="img/logo.png"> </h1>
+                        <h4 id="other"><a href="#"> Others <i class="fa-solid fa-chevron-down"></i></a> </h4>
+                        
+                    </div>
+                    
+                    <div class="navbar">
+                        <nav>
+                            <ul>
+                                <li><a href="#" class="navbar-link"><i class="fa-solid fa-magnifying-glass"></i> Search</a></li>
+                                <li><a href="#" class="navbar-link"><i class="fa-solid fa-percent"></i> Offers</a></li>
+                                <li><a href="#" class="navbar-link"><i class="fa-solid fa-circle-question"></i> Help</a></li>
+                                <li><a href="#" id="logout" class="navbar-link"><i class="fa-solid fa-right-from-bracket"></i> log Out</a></li>
+                                <li><a href="#" class="navbar-link"><i class="fa-solid fa-cart-shopping" id="cart"></i>  </a></li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="webpage-cnt" >
+            <h1>What's on your mind ?</h1>
+            
+            
+                <div class="food-card">
+                    
+                    <figure>
+                        <img src="img/biriyani.jpg" id="biryani" class="foodBtns "
+                        onclick="foodFilter('biryani')">
+                        <figcaption>Biryani</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/chicken.jpg" id="chicken" onclick="foodFilter('chicken')">
+                        <figcaption>chicken</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/noodles.jpg" id="chinese" onclick="foodFilter('chinese')">
+                        <figcaption>Chinese</figcaption>
+                    </figure>
+                   <figure>
+                        <img src="img/veggie.jpg" id="veg" onclick="foodFilter('veggie')">
+                        <figcaption>Veggie</figcaption>
+                   </figure>
+                </div>
+            
+        </div>
+    </section>
+    <hr>
+    <section id="card_food_items">
+       <div id="food_items"> 
+            <h1 id="res"><b>restaurants to explore</b></h1>
+            <p id="paragraph">Taste these delectable classics, delectable foods to make your day.
+            </p>
+            <div id="filter-btns">
+               <button id="filBtn">Filters</button>
+                <button id="HighToLow" onclick="checkHighToLow(this)" class="hidden">Cost High to Low</button>
+                <button id="LowToHigh" onclick="checkLowToHigh(this)" class="hidden">Cost Low to High</button>
+                <button id="Rating" onclick="checkRating(this)" class="hidden">Ratings</button> 
+            </div> 
+            <div id="card-food-ect" >
+                <div class="items-etc">
+                    <img src="img/sat1.jpg">
+                    <h1>Guntur Gongura</h1>
+                    <p>Biryani</p>
+                    <span><i class="fa-solid fa-star-half-stroke"></i>4.3 </span><br>
+                    <span>Indian, Chinese, Arabian, Continental
+                        Sholinganallur</span>
+                    
+                </div>
+
+                <div class="items-etc">
+                    <img src="img/sat2.jpg">
+                    <h1>The Good Bowl</h1>
+                    <p>Noodles</p>
+                    <span><i class="fa-solid fa-star-half-stroke"></i> 4.3 </span><br>
+                    <span>Noodles, Pastas Medavakkam</span>
+                    
+                </div>
+
+                <div class="items-etc">
+                    <img src="img/sat3.jpg">
+                    <h1>McDonald's</h1>
+                    <p>Chicken</p>
+                    <span><i class="fa-solid fa-star-half-stroke"></i>4 </span><br>
+                    <span>Burgers, Beverages, Cafe, Desserts
+                        Nehru Nagar</span>
+                    
+                </div>
+
+                <div class="items-etc">
+                    <img src="img/sat4.jpeg">
+                    <h1>A2B - Adyar Ananda Bhavan</h1>
+                    <p>Full Meals</p>
+                    <span><i class="fa-solid fa-star-half-stroke"></i>4.7 </span><br>
+                    <span>South Indian, North Indian, Sweets, Chinese
+                        Kanathur</span>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </section>    
+    
+ <div id="crt-modal" class="hidden">
+    <div id="crtCnt">
+        <div class="head"><h3>Cart Items :</h3><span id="clsBtn"><i class="fa-solid fa-xmark " ></i></span></div>
+        <div id="crt_item"></div>
+        <div class="foot">
+            <h3>Total</h3>
+            <h2 id="total"> $0.00 </h2>
+            <div id="pay">Payment</div>
+        </div>
+        
+    </div>
+</div> 
+<div id="location-modal" class="hidden">
+    <h2>Location :<span id="xmark"><i class="fa-solid fa-xmark " ></i></span></h2>
+    <input type="text" placeholder="Search for area,Street name..." id="search">
+    <div id="loc">
+        <div>
+            <i class="fa-solid fa-magnifying-glass-location"></i>
+        </div>
+        <div>
+            <a href="https://www.google.com/maps/@11.4026204,77.851978,8.5z?entry=ttu"> <h4>Get Current Location</h4></a>
+            <p>Using GPS</p>
+        </div>
+    </div>
+</div>
+<div id="payment-modal" class="hidden">
+    <span id="cls"><i class="fa-solid fa-xmark " ></i></span> 
+    <div id="payment">
+        <h1 id="paid"><i class="fa-solid fa-circle-check"></i></h1>
+        <h2> your payment had made successfully !</h2>
+    </div>
+</div>
+<div id="brand">
+    <div>
+        <h1>For better experience,download <br> the Swiggy app now</h1>
+    </div>
+    <div id="brand1">
+        <div class="icons">
+            <i class="fa-brands fa-google-play"></i></div>
+        <div>
+            <h4>GET IT ON </h4>
+            <h2> Google Play</h2>
+        </div>
+    </div>
+    <div id="brand2">
+        <div class="icons"><i class="fa-brands fa-apple"></i></div>
+        <div>
+            <h4>Download on the</h4>
+            <h2>App Store</h2>
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="foo">
+    <div>
+         <img src="img/footlogo.png" id="color">
+        <h4><i class="fa-regular fa-copyright"></i> 2023 Bundl Technologies <br> Pvt. Ltd</h4>
+    </div>
+    <div>
+        <h3>Company</h3>
+        <h4>About</h4>
+        <h4>Careers</h4>
+        <h4>Team</h4>
+        <h4>Swiggy One</h4>
+        <h4>Swiggy Instamart</h4>
+        <h4>Swiggy Genie</h4>
+    </div>
+    <div>
+        <div>
+            <h3>Contact us</h3>
+            <h4>Help & Support</h4>
+            <h4>Partner with us</h4>
+            <h4>Ride with us</h4>
+        </div>
+        <div id="three2">
+            <h3>Legal</h3>
+            <h4>Terms & Conditions</h4>
+            <h4>Cookie Policy</h4>
+            <h4>Privacy Policy</h4>
+        </div>
+    </div>
+    <div>
+        <h3>We deliver to: </h3>
+        <h4>Bangalore</h4>
+        <h4>Gurgaon</h4>
+        <h4>Hyderabad</h4>
+        <h4>Delhi</h4>
+        <h4>Mumbai</h4>
+        <h4>Pune</h4>
+    </div>
+</div>
+</footer>
+
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
