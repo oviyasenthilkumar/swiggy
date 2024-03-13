@@ -814,7 +814,15 @@ let payment_modal = document.getElementById("payment-modal");
 let pay = document.getElementById("pay");
 pay.addEventListener("click",function(){
     payment_modal.classList.remove("hidden");
-   
+    cart =[];
+    let cartItem = document.querySelectorAll(".crt-items");
+    for(let i = 0; i < cartItem.length; i++){
+        crt_item.removeChild(cartItem[i]);
+    }
+    total = [];
+    let totalValue = document.getElementById("total");
+    totalValue.innerText = " $0.00 "
+    cart_count.innerHTML = cart.length;   
 })
 //location
 let other = document.getElementById("other");
