@@ -188,7 +188,7 @@ figcaption{
 }
 .items img, .items-etc img{
     width:100%;
-    height: 100%;
+    height: 50%;
     border: none;
     border-radius: 7px;
     transition: all ease-in-out 1s;
